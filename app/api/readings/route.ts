@@ -1,7 +1,7 @@
 import { TemperatureHumidity } from "@/app/utils/database";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   const database = TemperatureHumidity();
   const collection = database.collection("readings");
   const readings = await collection.find().toArray();
